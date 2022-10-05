@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+    <style>
+        #div_principal{
+            display: block;
+            width: 25%;
+            height: 45vh;
+            padding: 1%;
+            background-color: red;
+            color: black;
+        }
+        #cambiar_texto{
+            display: block;
+        }
+        #cambiar_fondo{
+            display: block;
+        }
+        #cambiar_letra{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="div_principal">
+        Este es el contenido del div1
+    </div>
+    <button id="cambiar_texto" onclick="CambiarTexto()">Cambiar texto</button>
+    <button id="cambiar_fondo" onclick="CambiarFondo()">Cambiar color de fondo</button>
+    <button id="cambiar_letra" onclick="CambiarLetra()">Cambiar tipo y color de letra</button>
+
+    <script>
+        function CambiarTexto() {
+            var nuevo_texto = prompt("Introduce el nuevo texto");
+            document.getElementById("div_principal").innerHTML = nuevo_texto;
+        }
+        function CambiarFondo() {
+            var color_fondo = prompt("Introduce el nuevo color de fondo (en inglés)");
+            document.getElementById("div_principal").style.backgroundColor = color_fondo;
+        }
+        function CambiarLetra() {
+            var fuente = prompt("Inrtoduce la nueva fuente");
+            var color_fuente = prompt("Introduce el color de la letra");
+            document.getElementById("div_principal").style.fontFamily = fuente;
+            document.getElementById("div_principal").style.color = color_fuente;
+        }
+    </script>
+</body>
+</html>

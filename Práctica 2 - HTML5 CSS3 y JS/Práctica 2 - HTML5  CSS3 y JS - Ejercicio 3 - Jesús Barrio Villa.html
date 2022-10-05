@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+
+    <style>
+        #div_pregunta{
+            background-color: lightgrey;
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div_pregunta">
+        ¿Quién fundó Led Zeppelin?<br>
+        <input type="radio" name="pregunta1" id="radio_jimmy_page">Jimmy Page<br>
+        <input type="radio" name="pregunta1" id="radio_robert_plant">Robert Plant<br>
+        <input type="radio" name="pregunta1" id="radio_john_paul_jones">John Paul Jones<br>
+        <input type="radio" name="pregunta1" id="radio_john_bonham">John Bonham
+    </div>
+
+    <div id="div_pregunta">
+        ¿Quién es el guitarrista más grande de todos los tiempos según la revista Rolling Stone?<br>
+        <input type="radio" name="pregunta2" id="radio_johnny_ramone">Johnny Ramone<br>
+        <input type="radio" name="pregunta2" id="radio_carlos_santana">Carlos Santana<br>
+        <input type="radio" name="pregunta2" id="radio_jimi_hendrix">Jimi Hendrix<br>
+        <input type="radio" name="pregunta2" id="radio_john_frusciante">John Frusciante
+    </div>
+
+    <div id="div_pregunta">
+        Jimmy Page ostenta el mejor solo de guitarra según la revista Guitar World. ¿Con qué canción lo posee?<br>
+        <input type="radio" name="pregunta3" id="radio_whole_lotta_love">Whole Lotta Love<br>
+        <input type="radio" name="pregunta3" id="radio_stairway_to_heaven">Stairway to Heaven<br>
+        <input type="radio" name="pregunta3" id="radio_kashmir">Kashmir<br>
+        <input type="radio" name="pregunta3" id="radio_immigrant_song">Immigrant Song
+    </div>
+
+    <div id="div_pregunta">
+        ¿Cuánto dura la canción "Echoes" de Pink Floyd?<br>
+        <input type="radio" name="pregunta4" id="radio_5:27">5:27<br>
+        <input type="radio" name="pregunta4" id="radio_1:54">1:54<br>
+        <input type="radio" name="pregunta4" id="radio_23:33">23:33<br>
+        <input type="radio" name="pregunta4" id="radio_15:23">15:23
+    </div>
+
+    <div id="div_pregunta">
+        <button id="calcular" onclick="CalcularNota()">Corregir</button>
+    </div>
+
+    <script>
+        function CalcularNota() {
+            var nota_0 = parseInt(0);
+            if (document.getElementById("radio_jimmy_page").checked) {
+                var nota_1 = nota_0 + 2.5;
+            }
+            if (document.getElementById("radio_robert_plant").checked) {
+                var nota_1 = nota_0;
+            }
+            if (document.getElementById("radio_john_paul_jones").checked) {
+                var nota_1 = nota_0;
+            }
+            if (document.getElementById("radio_john_bonham").checked) {
+                var nota_1 = nota_0;
+            }
+
+            if (document.getElementById("radio_johnny_ramone").checked) {
+                var nota_2 = nota_1;
+            }
+            if (document.getElementById("radio_carlos_santana").checked) {
+                var nota_2 = nota_1;
+            }
+            if (document.getElementById("radio_jimi_hendrix").checked) {
+                var nota_2 = nota_1 + 2.5;
+            }
+            if (document.getElementById("radio_john_frusciante").checked) {
+                var nota_2 = nota_1;
+            }
+
+            if (document.getElementById("radio_whole_lotta_love").checked) {
+                var nota_3 = nota_2;
+            }
+            if (document.getElementById("radio_stairway_to_heaven").checked) {
+                var nota_3 = nota_2 + 2.5;
+            }
+            if (document.getElementById("radio_kashmir").checked) {
+                var nota_3 = nota_2;
+            }
+            if (document.getElementById("radio_immigrant_song").checked) {
+                var nota_3 = nota_2;
+            }
+
+            if (document.getElementById("radio_5:27").checked) {
+                var nota_4 = nota_3;
+            }
+            if (document.getElementById("radio_1:54").checked) {
+                var nota_4 = nota_3;
+            }
+            if (document.getElementById("radio_23:33").checked) {
+                var nota_4 = nota_3 + 2.5;
+            }
+            if (document.getElementById("radio_15:23").checked) {
+                var nota_4 = nota_3;
+            }
+
+            alert("Tu nota es " + nota_4);
+        }
+    </script>
+</body>
+</html>

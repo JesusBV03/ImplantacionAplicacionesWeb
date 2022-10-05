@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+
+    <style>
+        #tabla{
+            width: 50%;
+            margin: 0;
+            border: 1px solid black;
+        }
+        #fila_tabla{
+            border: 1px solid black;
+            margin: 0;
+            padding: 2%;
+        }
+        #fila{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <table id="tabla">
+        <tr id="fila">
+            <td  id="fila_tabla">
+                Configuración del Coche
+            </td>
+        </tr>
+        <tr>
+            <td id="fila_tabla">
+                Tipo de Motor<br>
+                <input type="radio" name="seleccion1" id="radio_gasolina">Gasolina
+                <input type="radio" name="seleccion1" id="radio_diesel">Diesel (+1500 E)
+                <input type="radio" name="seleccion1" id="radio_hibrido">Hibrido (+3000 E)
+            </td>
+        </tr>
+        <tr>
+            <td id="fila_tabla">
+                Tipo de Puertas<br>
+                <input type="radio" name="seleccion2" id="radio_3puertas">3 Puertas (-2000 E) (Solo con gasolina)
+                <input type="radio" name="seleccion2" id="radio_5puertas">5 Puertas
+                <input type="radio" name="seleccion2" id="radio_familiar">Familiar (+1500 E)
+            </td>
+        </tr>
+        <tr>
+            <td id="fila_tabla">
+                Tipo de Pintura<br>
+                <input type="radio" name="seleccion3" id="radio_rojo">Rojo
+                <input type="radio" name="seleccion3" id="radio_verde">Verde
+                <input type="radio" name="seleccion3" id="radio_naranja">Naranja
+                <input type="radio" name="seleccion3" id="radio_blanco">Blanco (-500 E)
+                <input type="radio" name="seleccion3" id="radio_negro">Negro (-600 E)
+            </td>
+        </tr>
+        <tr>
+            <td id="fila_tabla">
+                Seleccionar las que se deseen:<br>
+                <input type="checkbox" id="checkbox_metalizada">Metalizada (+750 E) (Solo Rojo, Verde o Naranja)<br>
+                <input type="checkbox" id="checkbox_llantas">Llantas (+200 E)<br>
+                <input type="checkbox" id="checkbox_climatizador">Climatizador (+800 E)<br>
+                <input type="checkbox" id="checkbox_GPS">GPS (+340 E)<br>
+                <input type="checkbox" id="checkbox_DVD">DVD (+800 E) (Solo modelo Familiar)<br>
+            </td>
+        </tr>
+        <tr>
+            <td id="fila_tabla">
+                Total a Cobrar:<br>
+                <button id="calcular" onclick="CalcularTotal()">Calcular</button>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        function CalcularTotal() {
+            var precio_base = parseInt(12000);
+
+            if (document.getElementById("radio_gasolina").checked) {
+                var precio_motor = precio_base;
+            }
+            if (document.getElementById("radio_diesel").checked) {
+                var precio_motor = precio_base + 1500;
+            }
+            if (document.getElementById("radio_hibrido").checked) {
+                var precio_motor = precio_base + 3000;
+            }else {
+                alert("Selecciona un tipo de motor");
+            }
+
+            if (document.getElementById("radio_3puertas").checked) {
+                var precio_puertas = precio_motor - 2000;
+            }
+            if (document.getElementById("radio_5puertas").checked) {
+                var precio_puertas = precio_motor;
+            }
+            if (document.getElementById("radio_familiar").checked) {
+                var precio_puertas = precio_motor + 1500;
+            }else {
+                alert("Selecciona un tipo de puerta");
+            }
+
+            if (document.getElementById("radio_rojo").checked) {
+                var precio_pintura = precio_puertas;
+            }
+            if (document.getElementById("radio_verde").checked) {
+                var precio_pintura = precio_puertas;
+            }
+            if (document.getElementById("radio_naranja").checked) {
+                var precio_pintura = precio_puertas;
+            }
+            if (document.getElementById("radio_blanco").checked) {
+                var precio_pintura = precio_puertas - 500;
+            }
+            if (document.getElementById("radio_negro").checked) {
+                var precio_pintura = precio_puertas - 600;
+            }else {
+                alert("Selecciona un color de pintura");
+            }
+
+            if (document.getElementById("checkbox_metalizada").checked) {
+                var precio_opciones1 = precio_pintura + 750;
+            }else {
+                var precio_opciones1 = precio_pintura
+            }
+
+            if (document.getElementById("checkbox_llantas").checked) {
+                var precio_opciones2 = precio_opciones1 + 200;
+            }else {
+                var precio_opciones2 = precio_opciones1;
+            }
+
+            if (document.getElementById("checkbox_climatizador").checked) {
+                var precio_opciones3 = precio_opciones2 + 800;
+            }else {
+                var precio_opciones3 = precio_opciones2;
+            }
+
+            if (document.getElementById("checkbox_GPS").checked) {
+                var precio_opciones4 = precio_opciones3 + 340;
+            }else {
+                var precio_opciones4 = precio_opciones3;
+            }
+
+            if (document.getElementById("checkbox_DVD").checked) {
+                var precio_opciones5 = precio_opciones4 + 800
+            }else {
+                var precio_opciones5 = precio_opciones4;
+            }
+
+            alert("El precio final es " + precio_opciones5)
+        }
+    </script>
+</body>
+</html>
