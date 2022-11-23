@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+    <style>
+        #en_center{
+            text-align: center;
+        }
+
+        #margen{
+            margin-top: 5px;
+        }
+
+        table {
+            border: 2px black solid;
+            padding: 5px;
+        }
+
+        /* td {
+            border: solid 2px black;
+        }
+
+        tr {
+            border: solid 2px black;
+        } */
+    </style>
+
+</head>
+
+<body>
+
+    
+    <form action="dalos_alumno_ejercicio3.php" method="post">
+        <table>
+
+            <tr>
+                <td>DATOS DEL ALUMNO</td>
+            </tr>
+
+            <tr>
+                <td rowspan="3">Introduzca su nombre:</td>
+                <td rowspan="3"><input type="text" name="nombre" id=""></td>
+                <td id='en_center' colspan="2">Enseñanza:</td>
+            </tr>
+
+            <tr>
+                <td><input type="radio" name="ense" id="" value="secundaria">Secundaria</td>
+                <td><input type="radio" name="ense" id="" value="bachiller">Bachillerato</td>
+            </tr>
+
+            <tr>
+                <td><input type="radio" name="ense" id="" value="medio">Ciclo Medio</td>
+                <td><input type="radio" name="ense" id="" value="superior">Ciclo Superior</td>
+            </tr>
+
+            <tr>
+                <td>Introduzca su telefono:</td>
+                <td><input type="text" name="telf" id=""></td>
+                <td>Matriculado:<input type="checkbox" name="matriculado" id=""></td>
+                
+            </tr>
+
+            <tr>
+                <td>Mostrar datos:</td>
+                <td><select name="menu" id="">
+                        <option value="pantalla">Por Pantalla</option>
+                        <option value="archivo">En Archivo datos.txt</option>
+                    </select></td>
+            </tr>
+        </table>
+
+        <input id='margen' type="submit" value="Enviar datos">
+   
+    </form>
+
+    
+
+
+</body>
+
+</html>

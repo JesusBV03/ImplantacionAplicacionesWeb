@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+
+<body>
+
+    <style>
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        fieldset {
+            border: 2px solid blue;
+            background-color: lightblue;
+        }
+
+        legend {
+            font-weight: bold;
+            border: 2px solid blue;
+            background-color: white;
+            padding: 5px;
+        }
+
+        #bold {
+            font-weight: bold;
+        }
+    </style>
+
+    <form action="ejercicio1.php">
+        <fieldset>
+            <legend>Formulario</legend>
+            <div>Escriba el alto y ancho (0 < números <=100) y mostraré un rectángulo de estrellas de ese tamaño.</div>
+                    <div>
+                        <table>
+                            <tr>
+                                <td id="bold">Ancho:</td>
+                                <td><input type="number" name="ancho" id=""></td>
+                            </tr>
+                            <tr>
+                                <td id="bold">Alto:</td>
+                                <td><input type="number" name="alto" id=""></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <input type="submit" value="Dibujar">
+                    <input type="reset" value="Borrar">
+        </fieldset>
+    </form>
+</body>
+
+</html>
