@@ -1,0 +1,15 @@
+Usuarios
+	Inicio	
+	Añadir
+	Listar
+	Buscar
+	Modificar
+	Borrar
+
+Pisos
+	Inicio	
+	Añadir
+	Listar
+	Buscar
+	Modificar
+	Borrar
