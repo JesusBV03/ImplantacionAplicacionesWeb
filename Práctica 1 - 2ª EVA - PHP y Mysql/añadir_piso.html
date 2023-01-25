@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>AÑADIR PISO</h1>
+    <form action="añadir_piso.php" method="GET" enctype="multipart/form-data">
+
+        Código del piso: <input type="text" name="codigo_piso" id=""><br>
+        Calle: <input type="text" name="calle_piso" id=""><br>
+        Número: <input type="text" name="numero_piso" id=""><br>
+        Piso: <input type="text" name="piso_piso" id=""><br>
+        Puerta: <input type="text" name="puerta_piso" id=""><br>
+        Código Postal: <input type="text" name="cp_piso" id=""><br>
+        Metros: <input type="text" name="metros_piso" id=""><br>
+        Zona: <input type="text" name="zona_piso" id=""><br>
+        Precio: <input type="text" name="precio_piso" id=""><br>
+        Imagen:
+        <input type="hidden" name="MAX_FILE_SIZE" value="102400">
+        <input type="file" name="imagen"><br>
+
+        ID usuario: <input type="text" name="usuario_id" id=""><br>
+        <input type="submit" value="Añadir">
+
+    </form>
+    <br><br><a href="pisos.html">Volver</a><br>
+<a href="index.html">Inicio</a>
+</body>
+</html>
