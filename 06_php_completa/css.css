@@ -1,0 +1,625 @@
+@font-face {
+    font-family: ubuntu_regular;
+    src: url("fonts/Ubuntu-Regular.ttf");
+}
+
+@font-face {
+    font-family: ubuntu_bold;
+    src: url("fonts/Ubuntu-Bold.ttf");
+}
+
+*{
+/*     margin: 0;
+    padding: 0; */
+    box-sizing: border-box;
+    font-family: 'ubuntu_regular';
+    text-decoration: none;
+}
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    font-family: 'ubuntu_regular';
+}
+
+header{
+    width: 100%;
+    background-color: black;
+    align-items: center;
+
+}
+
+/* FOOTER */
+
+footer{
+    position: absolute;
+    margin:0;
+    margin-top: 40px;
+    top: 100%;
+    
+    width: 100%;
+    min-height: 150px;
+    background-color: #333333ba;
+    text-align: center;
+    color:#E6C409;
+    font-family: 'ubuntu';
+    border-top: #E6C409 2px solid;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+
+
+}
+
+
+
+body {
+    position: relative;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    font-family: 'ubuntu_regular';
+}
+
+.body_1 {
+    background-color: black;
+}
+
+.vid_1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: auto;
+    z-index: -1;
+    width: 100%;
+}
+
+.vid_2 {
+    position: absolute;
+    top: 290px;
+    height: auto;
+    width: 100%;
+    z-index: -1;
+}
+
+
+/*
+#################################################################################################################
+######################################### MENU Y SUBMENU ########################################################
+#################################################################################################################
+*/
+/*
+######################################################################
+########################## HEADER SUPERIOR ############################
+######################################################################
+*/
+.header__superior{
+    max-width: 1200px;
+    margin: auto; /* Esto es para que se centre */
+    display: flex; /* Esto lo hacemos para que el logotipo esté a la izquierda y la barra de búsqueda a la izquierda */
+    align-items: center; /* Esto lo hacemos para centrarlo */
+    padding: 20px;
+}
+.logo{
+    margin: auto; /* Esto es para que se centre */
+    align-items: center; /* Esto lo hacemos para centrarlo */
+}
+.logo img{
+    width: 500px;
+}
+
+/*
+######################################################################
+############################ BARRA MENU ##############################
+######################################################################
+*/
+
+
+
+.container__menu{
+    width: 100%;
+    height: 70px;
+    background-color: #333;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    padding: 0px 20px; /* El primer valor es arriba y abajo, el segundo valor es izquierda y derecha. Ponemos ese valor para que haya un espacio y no toque */
+}
+.menu{
+    max-width: 1200px; /* Este es el tamaño con el que estamos trabajando */
+    margin: auto; /* Esto es para que se nos centre */
+    height: 100%; /* Esto es para que pueda estar en el centro, pues si no lo ponemos no va a detectar el medio horizontal */
+}
+nav{
+    height: 100%; /* Para que detecte el medio horizontal */
+}
+nav > ul { /* Con este selector se está especificando que el estilo vaya al ul que está en el nav */
+    height: 100%;
+    display: block; /* Para poner los li uno al lado del otro */
+}
+nav > ul > li { /* Aquí estamos seleccionando los li que estén dentro de ul que estén a su vez dentro de nav */
+    height: 100%;
+    list-style: none; /* Esto es para eliminar los puntos de la lista */
+    position: relative; /* Esto es para que el submenú se relacione con su padre (el apartado del menú del que sale) */
+    margin-right: 10px;
+}
+nav > ul > li > a{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center; /* Esto, junto al flex, hace que se posicionen las opciones en el centro horizontal */
+    padding: 14px; /* Esto es para que estén separados los apartados unos de otros */
+    color: #E6C409;
+    text-transform: uppercase;
+    font-size: 16px;
+    transition: all 300ms ease; /* Esto es para el efecto de transición del hover */
+
+}
+
+nav > ul > li > a:hover { /* Esto es para cuando el a dentro de li, dentro de ul y dentro de nav es sobrepasado por el ratón */
+    transform: scale(1.1);
+    background-color: #E6C409;
+    color: #030030;
+    border-radius: 6px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+}
+
+#selected{ /* Esto es para aplicarle un estilo concreto a la sección que corresponda a la página en la que se está */
+    transform: scale(1.1);
+    background-color: #E6C409;
+    color: #030030;
+    border-radius: 6px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+}
+
+nav > ul > li > div{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center; /* Esto, junto al flex, hace que se posicionen las opciones en el centro horizontal */
+    padding: 14px; /* Esto es para que estén separados los apartados unos de otros */
+    color: #E6C409;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+.opcion_derecha{
+    float: right;
+}
+.opcion_inicio{
+    float: left;
+}
+/*
+######################################################################
+############################## SUBMENU ###############################
+######################################################################
+*/
+nav ul li ul{ /* Esto es el contenedor del submenu */
+    width: 200px; /* Esto es un ancho fijo */
+    display: flex;
+    flex-direction: column; /* Esto es básicamente para que, con el display flex, se ordenen uno debajo de otro. No es necesario, pero es para asegurarse */
+    background-color: #E6C409;
+    position: absolute; /* Esto es para que el submenu salga del dom, y así no afecte al ancho derecho de la sección "Géneros" */
+    top: 90px; /* es para separar un poco, y que al pasar el cursor suba y se pegue */
+    left: -5px; /* Es para mantenerse en la misma línea */
+    padding: 10px 0px;
+    visibility: hidden; /* Esto es básicamente para que esté oculto */
+    opacity: 0; /* Esto es para que se no tenga opacidad al estar oculto, lo que nos permitirá teber una animación */
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    z-index: 1100; /* Para que se mantenga por encima de todo */
+    transition: all 150ms ease;
+    border-radius: 1em;
+}
+
+nav > ul > li > ul > li{
+    list-style: none;
+}
+
+nav ul li:hover ul{ /* Esto es para cuando se haga hover. El hover debe estar en el li, pues hacemos hover sobre la categoría para que salga el submenu, no sobre el submenu */
+    visibility: visible;
+    opacity: 1;
+    top: 70px;
+}
+
+nav ul li ul:before{ /* La pseudoclase before sirve para crear un elemento que se adapte a él */
+/*     content: '';/* Lo llenamos con un elemento en blanco */
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent; /* Ponemos los dos bordes transparentes para que haya un recorte */
+    border-bottom: 12px solid #E6C409;
+    position: absolute; /* Con esto y con el top y left hacemos que aparezca el triángulo en la parte superior */
+    top: -12px;
+    left: 20px;
+}
+nav ul li ul li a{
+    display: block; /* Para que en vez de en un texto normal, se convierta en un bloque */
+    color: #030030;
+    padding: 9px; /* Para que se separe del borde */
+    padding-left: 14px; /* Para que se desplace un poco a la derecha y quede un margen */
+    margin-top: 10px; /* Esto es para que los elementos estén separados entre sí */
+    font-size: 16px;
+    text-transform: uppercase;
+    transition: all 300ms ease;
+    background-color: #E6C409;
+}
+nav ul li ul li a:hover{
+    background: #333; /* Esto será el fondo de la subopción cuando hagamos hover */
+    color: #E6C409;
+    transform: scale(1.1);
+    padding-left: 30px; /* Esto es para que la barra comience a la izquierda, de tal manera que esté centrada */
+    font-size: 16px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    border-radius: 1em;
+}
+
+
+
+
+
+
+
+
+.video_fondo {
+    z-index: -1;
+    position: relative;
+}
+
+
+
+fieldset {
+    
+    min-height: 180px;
+    margin-top: 10%;
+    margin-left: 15%;
+    margin-right: 15%;
+    padding-top: 2%;
+    background-color: white;
+    background-image: url('design/logo_black.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 4px solid#E6C409;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    border-radius: 20px;
+    
+}
+
+legend {
+    padding: 8px;
+    
+    background-color: #333;
+    color: #E6C409;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+}
+
+button {
+    
+    
+    position: relative;
+    left: 47%;
+    margin-top: 8px;
+    border-radius: 5px;
+    border:2px solid #333;
+    background-color:#333;
+    color: #E6C409;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    font-size: 15px;
+    font-family: 'Ubuntu';
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+input {
+    font-size: 15px;
+    font-family: 'Ubuntu';
+    size: 40px;
+    font-weight: bold;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    border-radius: 8px;
+}
+
+
+select{
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    border-radius: 8px;
+}
+
+
+
+td {
+    font-weight: bold;
+    box-sizing: content-box;
+}
+
+.titulo_index {
+    position: absolute;
+    top: 10%;
+    border-radius: 30px;
+    left: 10%;
+    right: 10%;
+}
+
+.tit {
+    text-align: center;
+    font-size: 120px;
+    font-weight: bold;
+    -webkit-text-stroke: 5px BLUE;
+    font-family: 'Ubuntu';
+    color: rgba(255, 255, 255, 60%);
+    --webkit-background-clip: text;
+}
+
+/* BOTON */
+
+
+.margin {
+    margin-top: 10px;
+    border-radius: 5px;
+    border:4px solid #333;
+    background-color:#333;
+    color: #E6C409;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    font-size: 15px;
+    font-family: 'Ubuntu';
+    font-weight: bold;
+    cursor: pointer;
+}
+/* centro */
+.margin_2 {
+    
+    position: relative;
+    left: 47%;
+    margin-top: 8px;
+    border-radius: 5px;
+    border:2px solid #333;
+    background-color:#333;
+    color: #E6C409;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    font-size: 15px;
+    font-family: 'Ubuntu';
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.margin_3 {
+    margin-top: 50px;
+    margin-left: 10%;
+    border-radius: 5px;
+    border:2px solid #333;
+    background-color:#333;
+    color: #E6C409;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    font-size: 15px;
+    font-family: 'Ubuntu';
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.margin:hover {
+    border:2px solid  #E6C409;
+    background-color: #E6C409;
+    color: #333;
+
+}
+
+.margin_2:hover {
+    border:2px solid  #E6C409;
+    background-color: #E6C409;
+    color: #333;
+
+}
+
+.margin_3:hover {
+    border:2px solid  #E6C409;
+    background-color: #E6C409;
+    color: #333;
+
+}
+
+span {
+    font-size: 15px;
+    font-family: 'Ubuntu';
+    margin-top: 100px;
+    font-weight: bold;
+    color: red;
+}
+
+.add {
+    text-align: center;
+    margin-top: 100px;
+    margin-left: 42%;
+    font-size: 20px;
+    font-family: 'Ubuntu';
+    margin-top: 100px;
+    font-weight: bold;
+    color: white;
+
+}
+
+.add_1 {
+    padding: 8px;
+    background-color: #333;
+    border-radius: 5px;
+    border: solid 4px black;
+    text-align: center;
+    margin-top: 100px;
+    margin-left: initial;
+    font-size: 15px;
+    font-family: 'Ubuntu';
+    margin-top: 100px;
+    font-weight: bold;
+    color: white;
+
+}
+
+.add_2 {
+    padding: 8px;
+    background-color: #333;
+    border-radius: 5px;
+    border: solid 4px black;
+    text-align: center;
+    margin-top: 100px;
+    margin-left: 42%;
+    font-size: 15px;
+    font-family: 'Ubuntu';
+    margin-top: 100px;
+    font-weight: bold;
+    color: white;
+
+}
+
+.ini {
+    text-align: center;
+    margin-top: 100px;
+    margin-left: 50px;
+    font-size: 20px;
+    font-family: 'Ubuntu';
+    margin-top: 100px;
+    font-weight: bold;
+    color: white;
+}
+
+
+
+.div_1 {
+    background-color: black;
+}
+
+/* TABLAS */
+
+table {
+    position: relative;
+    
+    
+   
+}
+
+
+.tab_listar {
+    position: relative;
+    left: 8%;
+    color: white;
+    
+   
+}
+
+
+.borde {
+    border-collapse:separate;    
+    border-radius: 10px;
+    background-color: #333;
+    border: 4px solid black;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    text-align: center;
+    margin: 0;
+
+}
+
+/* IMAGEN PISOS LISTAR */
+
+.lis_imagen{
+    border:4px solid #E6C409;
+    border-radius: 30px;
+    width: 100px;
+    height: 100px;
+}
+
+/* CARRUSEL */
+
+
+
+
+
+
+/* Carrusel */
+
+.slideshow-container {
+    max-width: 50em;
+    position: relative;
+    margin: auto; 
+    margin-top: 50px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    border-radius: 2em;
+  }
+  
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+  }
+  
+  /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+  
+  /* Caption text */
+  .text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    border:#E6C409 solid 0.2em;
+  }
+  
+  .active, .dot:hover {
+    background-color: #717171;
+  }
+  
+  /* Fading animation */
+  .fade {
+    animation-name: fade;
+    animation-duration: 2s;
+  }
+  
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+
+  .img_carrusel{
+    border-radius: 2em;
+    border: #E6C409 solid 5px;
+  }
